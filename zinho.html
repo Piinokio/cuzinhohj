@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responda honestamente</title>
+	<style>
+		body {
+			background-color: #fff;
+		}
+
+		.question {
+			margin-top: 100px;
+			text-align: center;
+		}
+
+		.btn {
+			padding: 10px;
+			background-color: #ccc;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+			position: relative;
+			top: 0;
+			transition: top 0.2s ease-out;
+		}
+
+		.btn:hover {
+			background-color: #ddd;
+		}
+
+		.btn.no:hover {
+			animation: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="question">
+		<p>Você me ama?</p>
+		<button class="btn yes">Sim</button>
+		<button class="btn no">Não</button>
+	</div>
+	<script>
+		const noBtn = document.querySelector('.no');
+
+		function moveButton() {
+			const x = Math.floor(Math.random() * window.innerWidth);
+			const y = Math.floor(Math.random() * window.innerHeight);
+			noBtn.style.left = x + 'px';
+			noBtn.style.top = y + 'px';
+		}
+
+		noBtn.addEventListener('mouseover', moveButton);
+	</script>
+</body>
+</html>
